@@ -7,5 +7,15 @@ pipeline {
                 sh 'ls -ltra'
             }
         }
+    stage('compile') {    
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+    stage('install') {    
+            steps {
+                sh 'mvn install'
+            }
+        }
     }
 }
